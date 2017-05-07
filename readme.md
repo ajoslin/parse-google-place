@@ -9,36 +9,42 @@
 $ npm install --save parse-google-place
 ```
 
-
 ## Usage
 
 ```js
 var parseGooglePlace = require('parse-google-place')
 
-parseGooglePlace('input')
-//=> output
+parseGooglePlace(googlePlace)
+//=> address
 ```
 
 ## API
 
-#### `parseGooglePlace(input, [options])` -> `output`
+#### `parseGooglePlace(place)` -> `address`
 
-##### input
+##### place
 
-*Required*  
-Type: `string`
+*Required*
+Type: `object`
 
-Lorem ipsum.
+A place from the google places API. See ./fixture.js for an example.
 
-##### options
+##### Returns address
 
-###### foo
+"Address" is an object with the following keys:
 
-Type: `boolean`  
-Default: `false`
+- streetNumber
+- streetName
+- address
+- city
+- county
+- stateShort
+- stateLong
+- countryShort
+- countryLong
+- zipCode
 
-Lorem ipsum.
-
+Any properties not found in the place result will default to empty string.
 
 ## License
 
