@@ -1,0 +1,29 @@
+{
+  "name": "parse-google-place",
+  "main": "index.js",
+  "version": "0.0.0",
+  "description": "Parse a google place into a normal US address format",
+  "license": "MIT",
+  "repository": "ajoslin/parse-google-place",
+  "author": {
+    "name": "Andrew Joslin",
+    "email": "andrewtjoslin@gmail.com",
+    "url": "ajoslin.com"
+  },
+  "scripts": {
+    "test": "standard && tape test.js"
+  },
+  "keywords": [
+    "parse",
+    "google",
+    "place"
+  ],
+  "devDependencies": {
+    "tape": "^4.0.0",
+    "standard": "^7.0.0"
+  },
+  "files": [
+    "index.js",
+    "test.js"
+  ]
+}
