@@ -17,10 +17,10 @@ function parsePlace (place) {
   var result = {
     streetNumber: placeGet('street_number'),
     streetName: placeGet('route'),
-    city: placeGet('locality')
-      || placeGet('sublocality')
-      || placeGet('administrative_area_level_3')
-      || placeGet('administrative_area_level_2'),
+    city: placeGet('locality') ||
+      placeGet('sublocality') ||
+      placeGet('administrative_area_level_3') ||
+      placeGet('administrative_area_level_2'),
     county: placeGet('administrative_area_level_2'),
     stateShort: placeGet('administrative_area_level_1', true),
     stateLong: placeGet('administrative_area_level_1'),
