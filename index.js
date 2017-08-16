@@ -19,6 +19,7 @@ function parsePlace (place) {
     streetName: placeGet('route'),
     city: placeGet('locality') ||
       placeGet('sublocality') ||
+      placeGet('sublocality_level_1') ||
       placeGet('administrative_area_level_3') ||
       placeGet('administrative_area_level_2'),
     county: placeGet('administrative_area_level_2'),

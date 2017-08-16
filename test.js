@@ -27,3 +27,32 @@ test('default to empty string', (t) => {
   t.equal(result.countryLong, '')
   t.end()
 })
+
+test('city fallbacks', (t) => {
+  t.equal(parseGooglePlace({
+    address_components: [{
+      long_name: 'Town1',
+      types: ['sublocality']
+    }]
+  }).city, 'Town1')
+  t.equal(parseGooglePlace({
+    address_components: [{
+      long_name: 'Town2',
+      types: ['sublocality_level_1']
+    }]
+  }).city, 'Town2')
+  t.equal(parseGooglePlace({
+    address_components: [{
+      long_name: 'Town3',
+      types: ['administrative_area_level_3']
+    }]
+  }).city, 'Town3')
+  t.equal(parseGooglePlace({
+    address_components: [{
+      long_name: 'Town4',
+      types: ['administrative_area_level_2']
+    }]
+  }).city, 'Town4')
+
+  t.end()
+})
