@@ -44,15 +44,21 @@ test('city fallbacks', (t) => {
   t.equal(parseGooglePlace({
     address_components: [{
       long_name: 'Town3',
-      types: ['administrative_area_level_3']
+      types: ['neighborhood']
     }]
   }).city, 'Town3')
   t.equal(parseGooglePlace({
     address_components: [{
       long_name: 'Town4',
-      types: ['administrative_area_level_2']
+      types: ['administrative_area_level_3']
     }]
   }).city, 'Town4')
+  t.equal(parseGooglePlace({
+    address_components: [{
+      long_name: 'Town5',
+      types: ['administrative_area_level_2']
+    }]
+  }).city, 'Town5')
 
   t.end()
 })
