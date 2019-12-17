@@ -31,7 +31,10 @@ function parsePlace (place) {
     zipCode: placeGet('postal_code')
   }
 
-  result.address = result.streetNumber + ' ' + result.streetName
+  result.address =
+    result.streetNumber +
+    (result.streetNumber && result.streetName ? ' ' : '') +
+    result.streetName
 
   return result
 
