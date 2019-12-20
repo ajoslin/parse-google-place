@@ -1,7 +1,7 @@
 {
   "name": "parse-google-place",
   "main": "index.js",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Parse a google place into a normal US address format",
   "license": "MIT",
   "repository": "ajoslin/parse-google-place",
