@@ -21,6 +21,44 @@ test('basic', (t) => {
   t.end()
 })
 
+test('basic with address fallbacks', t => {
+  spok(t, parseGooglePlace({
+    address_components: [
+      {
+        types: ['street_number'],
+        long_name: '123'
+      }
+    ]
+  }), {
+    address: '123'
+  })
+  spok(t, parseGooglePlace({
+    address_components: [
+      {
+        types: ['route'],
+        long_name: 'Main St'
+      }
+    ]
+  }), {
+    address: 'Main St'
+  })
+  spok(t, parseGooglePlace({
+    address_components: [
+      {
+        types: ['street_number'],
+        long_name: '123'
+      },
+      {
+        types: ['route'],
+        long_name: 'Main St'
+      }
+    ]
+  }), {
+    address: '123 Main St'
+  })
+  t.end()
+})
+
 test('default to empty string', (t) => {
   let result = parseGooglePlace({})
   t.equal(result.countryShort, '')

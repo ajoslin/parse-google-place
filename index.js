@@ -31,11 +31,11 @@ function parsePlace (place) {
     zipCode: placeGet('postal_code')
   }
 
-  result.address [
+  result.address = [
     result.streetNumber,
     result.streetName
   ].filter(Boolean).join(' ')
-  
+
   return result
 
   function placeGet (key, short) {
